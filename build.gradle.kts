@@ -16,6 +16,11 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
+// Dependency versions
+val jsoupVersion by project.properties
+val graalVersion by project.properties
+val okhttpVersion by project.properties
+
 kotlin {
     jvm {
         compilations.all {
@@ -27,6 +32,13 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
+                implementation("org.jsoup:jsoup:$jsoupVersion")
+                implementation("org.graalvm.sdk:graal-sdk:$graalVersion")
+                implementation("org.graalvm.js:js:$graalVersion")
+                implementation("org.graalvm.js:js-scriptengine:$graalVersion")
+                implementation("org.graalvm.tools:profiler:$graalVersion")
+                implementation("org.graalvm.tools:chromeinspector:$graalVersion")
+                implementation("com.squareup.okhttp3:okhttp:$okhttpVersion")
             }
         }
         val jvmTest by getting

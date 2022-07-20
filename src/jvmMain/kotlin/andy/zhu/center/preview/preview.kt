@@ -15,3 +15,15 @@ private fun PreviewFromResource(htmlName: String) {
 @Preview
 @Composable
 fun PreviewHello() = PreviewFromResource("hello")
+
+@Preview
+@Composable
+fun PreviewDocument() = PreviewFromResource("document")
+
+@Preview
+@Composable
+fun PreviewHeadings() = PreviewFromResource("headings")
+
+@Preview
+@Composable
+fun PreviewLinks() = PreviewFromResource("links")
